@@ -28,7 +28,13 @@ Route::get('/misprocesos/editarproceso/{idp?}', 'ProcesoController@edit')->middl
 Route::post('/misprocesos/editarproceso/{idp?}', 'ProcesoController@update')->middleware('auth');
 Route::get('/actualizardatos', 'UserdatoController@create')->middleware('auth');
 Route::post('/actualizardatos', 'UserdatoController@store')->middleware('auth');
-Route::get('/help', 'UserdatoController@paginaAyuda')->middleware('auth');
+Route::get('/help', 'UserdatoController@paginaAyuda');
+Route::get('/help/register', 'UserdatoController@ayudaRegistrarse');
+Route::get('/help/data', 'UserdatoController@ayudaDatos');
+Route::get('/help/proceso', 'UserdatoController@ayudaProceso');
+Route::get('/help/procesoauto', 'UserdatoController@ayudaAuto');
+Route::get('/help/pagos', 'UserdatoController@ayudaPago');
+Route::get('/aboutus', 'UserdatoController@quienesSomos');
 
 Route::get('/misprocesos/solicitud', function(){
     alert()->message('Message', 'Optional Title');

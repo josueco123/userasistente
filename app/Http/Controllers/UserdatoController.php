@@ -43,6 +43,12 @@ class UserdatoController extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'identificacion' => 'required',
+            'telefono' => 'required|max:10|min:7',
+            'direccion' => 'required',
+        ]);
+
         $id = auth()->user()->id;
 
         $userdato = Userdato::where('userdatos.user_id','=',$id)->first();
@@ -124,5 +130,29 @@ class UserdatoController extends Controller
 
     public function paginaAyuda(){
         return view('ayuda');
+    }
+
+    public function ayudaRegistrarse(){
+        return view('help.registrarse');
+    }
+
+    public function ayudaDatos(){
+        return view('help.actulizardatos');
+    }
+
+    public function ayudaProceso(){
+        return view('help.procesohelp');
+    }
+
+    public function ayudaAuto(){
+        return view('help.solicitarauto');
+    }
+
+    public function ayudaPago(){
+        return view('help.realizarpagos');
+    }
+
+    public function quienesSomos(){
+        return view('quiensomos');
     }
 }

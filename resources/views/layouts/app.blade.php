@@ -18,6 +18,23 @@
     <!-- Material Design for Bootstrap CSS -->
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
     
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+            border-radius: 50%;
+            color: #0e457b;
+        }    
+ 
+    </style>  
+
 	<script>
 		window.Laravel = <?php echo json_encode([
 			'csrfToken' =>csrf_token(),
@@ -47,7 +64,21 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
+                        <li class="nav-item">
+                                <a class="nav-link" href="{{ url('aboutus')}}">Quienes Somos</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('forums')}}">Foro</a>
+                            </li>   
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url('help')}}">Ayuda</a>
+                            </li>                             
+
                         @guest
+                        
+
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -56,7 +87,8 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else                           
+                        @else                         
+
                             <div class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     Procesos Judiciales <span class="caret"></span>
@@ -70,15 +102,7 @@
                                        Agregar Proceso
                                     </a>                                   
                                 </div>
-                            </div>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('forums')}}">Foro</a>
-                            </li>
-
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('help')}}">Ayuda</a>
-                            </li>
+                            </div>                                                   
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -106,7 +130,24 @@
             </div>
         </nav>
         <main class="py-4">
-            @yield('content')			
+            @yield('content')	
+        <footer class="container" >
+        <br/>
+      <br/>
+      <br/>
+      <br/>
+      <hr class="featurette-divider">
+    <div class="text-center center-block">
+      <h2 class="txt-railway" style="color: #0e457b;">Redes</h2>
+      <a href="https://www.facebook.com/Asistente-Judicial-1211266365696878" target="_blank" class="fa fa-facebook"></a>
+      <a href="https://www.youtube.com/channel/UCcVMG3lQbxmuUB08isxYbBA" target="_blank" class="fa fa-youtube"></a>
+      <a href="https://www.instagram.com/asistentejudicial" target="_blank" class="fa fa-instagram"></a>
+      <a href="emailto:miasistentejudicial@gmail.com" target="_blank" class="fa fa-google"></a>
+      <a href="https://play.google.com/store/apps/details?id=com.SuecoApps.AsistenteJudicialApp" target="_blank" class="fa fa-android"></a>
+  </div>
+    <p class="float-right"><a href="#" style="color: #0e457b;">Back to top</a></p>
+    <p> Asistente Judicial &middot; <a href="http://asistententejudicial.com/docs/Politicas%20de%20Privacidad.pdf" target="_blank" style="color: #0e457b;">Políticas</a> &middot; <a href="http://asistententejudicial.com/docs/Terminos%20y%20Condiciones%20Asistente%20Judicial.pdf" target="_blank" style="color: #0e457b;">Términos</a></p>
+  </footer>		
         </main>
     </div>
     <!-- Optional JavaScript -->

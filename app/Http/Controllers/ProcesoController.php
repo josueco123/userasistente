@@ -69,6 +69,11 @@ class ProcesoController extends Controller
     {
         //
         //
+        $this->validate($request, [
+            'radicacion' => 'required|min:9|max:11',
+            'juzgado' => 'required',
+        ]);
+
         $rad = $request->get('radicacion');
         $juzgado = $request->get('juzgado');
 
@@ -137,7 +142,12 @@ class ProcesoController extends Controller
      */
     public function update(Request $request,$idp)
     {
-        //        
+        //
+        $this->validate($request, [
+            'radicacion' => 'required|min:9|max:11',
+            'juzgado' => 'required',
+        ]);
+                
         $proceso = Proceso::find($idp);
         
         $proceso->radicacion = $request->get('radicacion');

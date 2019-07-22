@@ -66,45 +66,7 @@
                     </table>
                     </div>
                 @endif               
-               </div>
-               <div class="card">
-                <div class="card-header"><h2>Agregar Estado</h2></div>
-                <div class="card-body">
-                <form  action="" method="post">
-                
-                @foreach($errors->all() as $errors)
-                <p class="alert alert-danger">{{$errors}}</p>
-                 @endforeach
-
-                 
-                 <fieldset>                   
-                                            
-                        <div class="form-group">
-                            <label for="fecha">Fecha</label>                            
-                            <input type="date" class="form-control" id="fecha" placeholder="" name="fecha">
-                        </div>
-                      
-
-                        <div class="form-group">
-                            <label for="descripcion" class="bmd-label-floating" style="color: #6a6a6a;" >Descripcion</label>
-                            <input class="form-control" id="descripcion" name="descripcion">                            
-    
-                        </div>
-
-                        <div class="form-group">
-                            <input type="hidden" id="proceso_id" name="proceso_id" value="{!!  $proceso->id; !!}">
-                            <input type="hidden" name="_token" value="{!! csrf_token()!!}">                            
-                            <button type="submit" class="btn btn-raised btn-primary" style="background-color: #0e457b;">Agregar</button>
-                        </div>
-
-                        
-                    
-                </fieldset>
-                 </form>             
-                
-                    </div>                          
-               </div>
-               
+               </div>               
         </div>
     </div>
 </div>

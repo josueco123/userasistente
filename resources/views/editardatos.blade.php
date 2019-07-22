@@ -49,7 +49,7 @@
                         <span class="bmd-help">Escribe tu direccion seguido del barrio</span>
                     </div>                                                      
                     <div class="form-group">                                                
-                        <button type="submit" class="btn btn-raised btn-primary" style="background-color: #0e457b;">Guardar</button>                        
+                        <button type="submit" class="btn btn-raised btn-primary" style="background-color: #0e457b;">Actualizar</button>                        
                     </div>
                 </fieldset>
             </form>
